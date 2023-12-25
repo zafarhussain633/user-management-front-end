@@ -1,4 +1,4 @@
-const Popup = ({ open, closePopup, children }) => {
+const Popup = ({ title="Add Use",open, closePopup, children }) => {
   return (
     open && (
       <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
@@ -9,7 +9,7 @@ const Popup = ({ open, closePopup, children }) => {
           >
             X
           </button>
-          <h2 className="text-lg font-semibold mb-4">Add User</h2>
+          <h2 className="text-lg font-semibold mb-4">{title}</h2>
           {children}
             </div>
       </div>

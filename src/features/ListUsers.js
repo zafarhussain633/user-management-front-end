@@ -15,8 +15,10 @@ const ListUsers = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
-        <div className="max-w-4xl w-full p-4 md:p-8 bg-white rounded-lg shadow-md overflow-y-auto"
-       style={{ height: '90vh' }}>
+      <div
+        className="max-w-4xl w-full p-4 md:p-8 bg-white rounded-lg shadow-md overflow-y-auto"
+        style={{ height: "90vh" }}
+      >
         {/* Button on the top right */}
         <div className="flex justify-end mb-4">
           <button
@@ -37,10 +39,11 @@ const ListUsers = () => {
               ))}
             </tbody>
           </table>
-          {users?.length === 0 && (
-            <p className="text-center my-5">no record found</p>
-          )}
-          {isLoading && <p className="text-center my-5">Fetching Users...</p>}
+          <p className="text-center my-5">
+            {users?.length === 0 && "no record found"}
+            {isLoading && "Fetching Users..."}
+            {!users && !isLoading && "Failed to fetch data"}
+          </p>
         </div>
       </div>
 
